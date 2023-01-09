@@ -12,3 +12,62 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const galleryItemEl = document.createElement('li')
+galleryItemEl.classList.add('item') 
+// galleryItemEl.insertAdjacentHTML.add('')
+// console.log(galleryItemEl)
+
+const imageEl = document.createElement('img');
+// imageEl.url = 
+// imageEl.setAttribute('alt', value);
+// console.log(imageEl);
+
+galleryItemEl.appendChild(imageEl);
+
+
+
+
+const galleryEl = document.querySelector('ul');
+//  console.log(galleryEl);
+
+
+// const foodPotEl = document.createElement('li');
+// foodPotEl.classList.add('item')
+// foodPotEl.textContent = 'Potatoes'
+// console.log(foodPotEl);
+
+
+
+// --------- вариант 1 -------------------
+
+ const el = [];
+
+ for (let i = 0; i < images.length; i += 1) {
+   const imag = images[i];
+   const galleryItemEl = document.createElement('li')
+   galleryItemEl.classList.add('item') 
+   const imageEl = document.createElement('img');
+
+  //  galleryItemEl.insertAdjacentHTML('afterbegin', imageEl)
+
+   imageEl.setAttribute('url', images[i].url);
+    //  imageEl.url = images[i].url;
+   imageEl.setAttribute('alt', images[i].alt);
+    // imageEl.alt = images[i].alt;
+     galleryItemEl.appendChild(imageEl);
+   
+
+
+  el.push(galleryItemEl);
+  
+ }
+
+//  console.log(images[0])
+//  console.log(images[0].alt)
+//  console.log(...el)
+
+   galleryEl.append(...el) ;
+  // galleryEl.insertAdjacentHTML('afterbegin', el)
+  console.log(galleryEl)
