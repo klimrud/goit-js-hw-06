@@ -15,71 +15,130 @@ const images = [
 
 // -------вариант 1------
 // const galleryItemEl = document.createElement('li')
-// galleryItemEl.classList.add('item') 
-// // galleryItemEl.insertAdjacentHTML.add('')
-// // console.log(galleryItemEl)
+// galleryItemEl.classList.add('gallery__item') 
+// //  galleryItemEl.innerHTML =  '<li></li>'
+// //  console.log(galleryItemEl)
 
 // const imageEl = document.createElement('img');
-// // imageEl.url = 
-// // imageEl.setAttribute('alt', value);
-// // console.log(imageEl);
+// imageEl.classList.add('gallery__img');
+// imageEl.src = images[0].url;
+// imageEl.alt= images[0].alt;
+// //  imageEl.innerHTML =` <img class="gallery__img" src="${image.url}" alt="${image.alt}`
+// //  console.log(imageEl.innerHTML);
 
-// galleryItemEl.appendChild(imageEl);
-
-
-
-
-// const galleryEl = document.querySelector('ul');
-// //  console.log(galleryEl);
+//    galleryItemEl.appendChild(imageEl);
 
 
-// // const foodPotEl = document.createElement('li');
-// // foodPotEl.classList.add('item')
-// // foodPotEl.textContent = 'Potatoes'
-// // console.log(foodPotEl);
+
+  //  const galleryEl = document.querySelector('ul');
+// //  galleryEl.innerHTML = '<li class="gallery__item"><img class="gallery__img" src="${image.url}" alt="${image.alt}"/>'
+//    console.log(galleryEl);
+// //  galleryEl.insertAdjacentHTML("beforeend", '');
+
+
+
+
+
+// const title = document.querySelector("p");
+// // title.innerHTML = 'New and <span class="accent">improved</span> title';
+// title.insertAdjacentHTML('beforeend', ' <span class="accent">improved</span>')
+// console.log(title)
+
+
 
 
 
 // // --------- вариант 1 -------------------
 
 //  const el = [];
-
+//  const galleryEl = document.querySelector('ul');
 //  for (let i = 0; i < images.length; i += 1) {
 //    const imag = images[i];
 //    const galleryItemEl = document.createElement('li')
-//    galleryItemEl.classList.add('item') 
+//    galleryItemEl.classList.add('gallery__item') 
 //    const imageEl = document.createElement('img');
+//    imageEl.classList.add('gallery__img');
+//    imageEl.style.margin = "50px";
+//   //  imageEl.setAttribute('src', images[i].url);
+//       imageEl.src = images[i].url;
+//   //  imageEl.setAttribute('alt', images[i].alt);
+//      imageEl.alt = images[i].alt;
+//      imageEl.width = 400;
 
-//   //  galleryItemEl.insertAdjacentHTML('afterbegin', imageEl)
-
-//    imageEl.setAttribute('url', images[i].url);
-//     //  imageEl.url = images[i].url;
-//    imageEl.setAttribute('alt', images[i].alt);
-//     // imageEl.alt = images[i].alt;
 //      galleryItemEl.appendChild(imageEl);
    
+//    el.push(galleryItemEl);
 
-
-//   el.push(galleryItemEl);
-  
 //  }
 
 // //  console.log(images[0])
 // //  console.log(images[0].alt)
-// //  console.log(...el)
+//  console.log(...el)
 
 //    galleryEl.append(...el) ;
-//   // galleryEl.insertAdjacentHTML('afterbegin', el)
 //   console.log(galleryEl)
+
+
 
 
 // ------вариант 2 ----
 
 
-const galleryEl = document.querySelector('.gallery');
-console.log(galleryEl);
-const imageEl = images.map(image => {
-  return `<li class="gallery__item"><img class="gallery__img" src="${image.url}" alt="${image.alt}"/>`
-}).join("");
-// console.log(imageEl);
-galleryEl.insertAdjacentHTML("beforeend", imageEl);
+ const makeGalleryMarkup = image => {
+  
+    return `<li class="gallery__item">
+               <img class="gallery__img" 
+                    src="${image.url}" 
+                    alt="${image.alt}" 
+                    width = "400"/>
+            </li> `
+    };
+// console.log(makeGalleryMarkup)
+
+const galleryEl = document.querySelector('ul');  
+ console.log(galleryEl) 
+ 
+const makeGallery = images.map(makeGalleryMarkup).join('');
+// console.log(makeGallery)
+
+ galleryEl.insertAdjacentHTML('beforeend', makeGallery)
+  // console.log(makeGallery)
+
+
+
+
+// ------вариант 3----
+
+
+//  const galleryEl = document.querySelector('ul');
+//  console.log(galleryEl);
+//  const imageEl = images.map(image => {
+  
+//   return `<li class="gallery__item">
+//              <img class="gallery__img" 
+//                   src="${image.url}" 
+//                   alt="${image.alt}" 
+//                   width = "400"/>
+//           </li> `
+//  }).join("");
+
+ 
+// // // console.log(imageEl);
+//   galleryEl.insertAdjacentHTML("beforeend", imageEl);
+
+
+// ------ 4 -----
+
+// const ulEl = document.querySelector('ul');
+//   const imageEl = images.reduce(
+// (acc, image) => acc += `<img src = "${image.url}" alt = "${image.alt}" width = "400" />`,
+// ""
+// );
+// ulEl.innerHTML = imageEl;
+// // imageEl.forEach ( imag =>  {
+// //   ul.insertAdjacentHTML(
+// //     'beforeend' ,
+// //     `<li><img src = " ${images.url} " alt = " ${ images.alt } " width = "400"/></li>` ,
+// //   ) ;
+// // } ) ;
+// console.log(ulEl)
