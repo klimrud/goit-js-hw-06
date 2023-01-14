@@ -34,46 +34,25 @@
  const outputEl = document.querySelector('#name-output');
  console.log(outputEl.textContent);
  inputEl.addEventListener("input", onInputChange);
- inputEl.addEventListener('input', onOutput);
+  // inputEl.addEventListener('input', onOutput);
 
 
 function onInputChange(event) {
   outputEl.textContent = event.currentTarget.value;
-  console.log(outputEl);
-
+  // console.log(outputEl);
+  
 };
 
-function onOutput(event) {
-  if (inputEl.value !== ' ') {
-    outputEl.textContent = event.currentTarget.value.trim()  ;
-    
-  }
-//   // inputEl !== ' ' ? (outputEl.innerText = inputEl.trim()) : 'Anonymous';
-console.log(inputEl.value);
-
-}
+// function onOutput(event) {
+//     if (inputEl.value === ' ') {
+//       outputEl.innerText = inputEl.trim()  | 'Anonymous';
+//    }
+// // console.log(inputEl.value);
+//  console.log( outputEl.innerText)
+// // outputEl.reset();
+//  }
 
 
 
 // ================================================
 
-
-
-// const inputEl = document.querySelector('#name-input');
-// inputEl.addEventListener('input', onInputChange);
-// const outputEl = document.querySelector('#name-output');
-// // console.log(outputEl.textContent)
-// //  console.log(inputEl);
-
-// function onInputChange(event) {
-//   outputEl.textContent = event.currentTarget.value;
-//   console.log(inputEl);
-
-  
-//   inputEl !== ' ' ? (outputEl.innerText = inputEl.trim()) : ',Anonymous';
-//   console.log(inputEl);
-
-// };
-// // console.log(outputEl.textContent)
-
-// console.log(onInputChange)

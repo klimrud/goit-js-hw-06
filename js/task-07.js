@@ -1,19 +1,40 @@
-const inputaControlEl = document.querySelector('#font-size-control');
+const inputControlEl = document.querySelector('#font-size-control');
 const textEl = document.querySelector('#text');
-console.log(inputaControlEl);
-inputaControlEl.addEventListener( 'click', onInputChange);
+console.log(inputControlEl);
+console.log(textEl.textContent);
 
-function onInputChange () {
-    console.log(inputaControlEl);
+ inputControlEl.addEventListener( 'change', onTextSize );
+
+function onTextSize(event) {
+  inputControlEl.range = event.currentTarget.value;
+  textEl.style.fontSize = `${event.currentTarget.value}px`
+  console.log(inputControlEl.range)
+  console.log(textEl.textContent)
 }
 
 
-function onMouseUp() {
-    document.removeEventListener("mousemove", onMouseMove);
-    document.removeEventListener("mouseup", onMouseUp);
-};
+// console.log()
+// console.log()
 
-document.addEventListener("mouseup", onMouseUp);
+
+// function onInputChange() {
+//   const rng = document.getElementById('font-size-control'); //rng - это Input
+//     const span = document.getElementById('text'); // span - это span
+//   span.style = rng.value +'px';
+
+// }
+// console.log(rng)
+// function onInputChange () {
+//     console.log(inputaControlEl);
+// }
+// inputControlEl.addEventListener('click', onMouseUp);
+
+// function onMouseUp() {
+//     document.removeEventListener("mousemove", onMouseMove);
+//     document.removeEventListener("mouseup", onMouseUp);
+// };
+
+// document.addEventListener("mouseup", onMouseUp);
 
 
 
