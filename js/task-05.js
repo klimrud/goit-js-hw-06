@@ -40,14 +40,15 @@
 function onInputChange(event) {
   outputEl.textContent = event.currentTarget.value;
   // console.log(outputEl);
-  
+  console.log(inputEl.value);
 };
 
 // function onOutput(event) {
-//     if (inputEl.value === ' ') {
-//       outputEl.innerText = inputEl.trim()  | 'Anonymous';
-//    }
-// // console.log(inputEl.value);
+//      if (inputEl.value !== ' ') {
+//         outputEl.textContent = inputEl.trim()  | 'Anonymous';
+//     }
+
+
 //  console.log( outputEl.innerText)
 // // outputEl.reset();
 //  }
