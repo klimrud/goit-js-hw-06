@@ -12,13 +12,25 @@ const btnChangeColorEl = document.querySelector('.change-color')
 //  console.log(colorEl);
 // console.log(btnChangeColorEl);
 
-btnChangeColorEl.addEventListener('click', onChangeColor);
+ btnChangeColorEl.addEventListener('click', onChangeColor);
 
+// function onChangeColor (event) {
+//   // console.log('click')
+//   document.body.style.backgroundColor = [getRandomHexColor()];
+//  colorEl.textContent = [getRandomHexColor()];
+//  console.log('span.color:',colorEl.textContent);
+//   // console.log(document.body.style.backgroundColor);
+//   // console.log(getRandomHexColor(16777215));
+// }
+
+
+// =======================================================
+
+// console.log(btnChangeColorEl);
 function onChangeColor (event) {
-  // console.log('click')
-  document.body.style.backgroundColor = [getRandomHexColor()];
- colorEl.textContent = [getRandomHexColor()];
- console.log('span.color:',colorEl.textContent);
-  // console.log(document.body.style.backgroundColor);
-  // console.log(getRandomHexColor(16777215));
+const bodyEl = document.body;
+// console.log(bodyEl);
+bodyEl.style.backgroundColor = getRandomHexColor();
+colorEl.textContent = bodyEl.style.backgroundColor;
+console.log('span.color:',colorEl.textContent);
 }

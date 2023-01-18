@@ -3,7 +3,7 @@ const textEl = document.querySelector('#text');
 console.log(inputControlEl);
 console.log(textEl.textContent);
 
- inputControlEl.addEventListener( 'change', onTextSize );
+ inputControlEl.addEventListener( 'input', onTextSize );
 
 function onTextSize(event) {
   inputControlEl.range = event.currentTarget.value;
